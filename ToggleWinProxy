@@ -1,0 +1,35 @@
+:: Below written bash script toggles windows proxy to ENABLED state.
+:: // But it is must that first you have already set the proxy to the desired URL and PORT.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+@ECHO OFF
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 1 /f
+ECHO Proxy Enabled
+PAUSE
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+:: Below written script is for toggling Windows Proxy OFF.
+-----------------------------------------------------------------------------------------------------------------------
+
+@ECHO OFF
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0 /f
+ECHO Proxy OFF
+PAUSE
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+// For setting the URL and PORT to 127.0.0.1:8080. Following steps are to be taken.
+
+Go to Internet Options > Connections > LAN Settings 
+
+-> Check the Proxy Server and Input value for Address and Port.
+                            [Address = 127.0.0.1 & Port = 8080]
+
+ _______________________________________________________________________________________________________________________
+|                                                                                                                       |
+|           ** This will help you to intercept or monitor all the http traffic of your whole computer. **               |
+|_______________________________________________________________________________________________________________________|
